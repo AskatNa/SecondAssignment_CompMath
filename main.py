@@ -5,8 +5,8 @@ def cramer_method(matrix, results):
         return sum((-1) ** i * mat[0][i] * determinant([row[:i] + row[i+1:] for row in mat[1:]]) for i in range(len(mat)))
 
     detMain = determinant(matrix)
-    return [determinant([row[:i] + [results[j]] + row[i+1:] for j, row in enumerate(matrix)]) / detMain for i in range(len(matrix))]
 
+    return [determinant([row[:i] + [results[j]] + row[i+1:] for j, row in enumerate(matrix)]) / detMain for i in range(len(matrix))]
 def gauss_method(matrix, results):
     matrix = [row[:] for row in matrix]
     results = results[:]
